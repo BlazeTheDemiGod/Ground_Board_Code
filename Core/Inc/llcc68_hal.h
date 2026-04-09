@@ -93,6 +93,14 @@ bool llcc68_wait_while_busy_hal(uint32_t timeout_ms);
 
 void RF_TX_Init_and_Send(void);
 
+void RF_TX_Init(void);
+
+void RF_TX(uint8_t* tx_payload);
+
+
+void RF_RX_Init_and_Receive(void);
+
+
 
 /*
  * -----------------------------------------------------------------------------
