@@ -1,5 +1,7 @@
 Code to controll RF module for Sp26 Senior Design II Project Dual Deploy Rocket Controller PCB. 
 
+Still in progress of adding functions to transmit and receive packets easliy
+
 RF Pin Names: 
 (Name in datasheet -> Name of pin in IDE)
 GND
@@ -20,3 +22,5 @@ DIO1 -> LoRa__INT_1  (Interupt pin)
 DIO2 -> NC (Not Connected)
 DIO3 -> NC (Not Connected)
 GND 
+
+
