@@ -107,147 +107,7 @@ int main(void)
 
   //--------------------------------------Initialization Functions-------------------------------------//
 
-  /* RF_TX_Init();
-  llcc68_chip_status_t llcc68_status;
-  llcc68_get_status(0, &llcc68_status);
-  if(llcc68_status.chip_mode != LLCC68_CHIP_MODE_STBY_RC)	{RF_ERROR();}
-  llcc68_check_cmd_status();
-
-  //uint8_t reg_val[5] = {0};
-  //uint8_t status = GetStatusRYLR689(reg_val);
-  //	  	  __NOP();
-
-
-
-   	  	  //SetPacketTypeRYLR689(0x01); //0x01=lora (pg. 82 datasheet)
-   //uint8_t packet_type = GetPacketTypeRYLR689(reg_val);
-   llcc68_pkt_type_t pkt_type;
-   llcc68_get_pkt_type(0, &pkt_type);
-
-   llcc68_check_cmd_status();
-   //llcc68_get_status(0, &llcc68_status);
-
-   if(pkt_type != LLCC68_PKT_TYPE_LORA)
-   {
-	   if(pkt_type == LLCC68_PKT_TYPE_GFSK)
-	   {
-		   llcc68_set_pkt_type(0, LLCC68_PKT_TYPE_LORA);
-	   }
-	   else {RF_ERROR();}
-   }
-   llcc68_check_cmd_status();
-   //llcc68_get_status(0, &llcc68_status);
-
-
-   llcc68_set_rf_freq(0, 915000000);
-   //llcc68_get_status(0, &llcc68_status);
-   llcc68_check_cmd_status();
-
-
-   llcc68_pa_cfg_params_t pa_cfg =
-      {
-   		   0x04,
-   		   0x03,  //range from 0x00 to 0x07, 0x07 being highest output power of +22dB
-   		   0x00,
-   		   0x01
-      };
-   llcc68_set_pa_cfg(0, &pa_cfg);
-   llcc68_check_cmd_status();
-
-
-   llcc68_set_tx_params(0, 14, LLCC68_RAMP_200_US);
-   llcc68_check_cmd_status();
-
-
-   llcc68_set_buffer_base_address(0, 0x00, 0x00);
-   llcc68_check_cmd_status();
-
-   //________________________________Write bata to Tx/Rx Data Buffer_____________________________
-   //llcc68_write_buffer(context, offset, buffer, size);
-
-   llcc68_mod_params_lora_t lora_mod_params =
-   {
-		   LLCC68_LORA_SF9,
-		   LLCC68_LORA_BW_125,
-		   LLCC68_LORA_CR_4_5,
-		   0x00
-   };
-   llcc68_set_lora_mod_params(0, &lora_mod_params);
-   llcc68_check_cmd_status();
-
-
-   llcc68_pkt_params_lora_t lora_pkt_params =
-   {
-		   8,
-		   LLCC68_LORA_PKT_EXPLICIT,
-		   32, 		//Payload length, 32 is arbitrary value, set to max value expected
-		   0x01,
-		   0x00
-   };
-   llcc68_set_lora_pkt_params(0, &lora_pkt_params);
-   llcc68_check_cmd_status();
-
-
-   llcc68_irq_mask_t tx_irq_mask=
-		   LLCC68_IRQ_TX_DONE |
-		   LLCC68_IRQ_TIMEOUT ;
-   llcc68_set_dio_irq_params(0, tx_irq_mask, tx_irq_mask, 0x0000, 0x0000);
-   llcc68_check_cmd_status();
-
-
-   llcc68_set_lora_sync_word(0, 0x12);  //0x34 is supposed to public, 0x12 is supposed to be private
-   llcc68_check_cmd_status();
-
-
-   llcc68_set_tx(0, LLCC68_MAX_TIMEOUT_IN_MS);
-   llcc68_check_cmd_status();
-
-
-   //_____________________________________Wait for DIO Flag_______________________________________
-   bool RF_DIO = 0;
-   while(RF_DIO == 0)
-   {
-	   RF_DIO = HAL_GPIO_ReadPin(LoRa_INT_1_GPIO_Port, LoRa_INT_1_Pin);
-   }
-   llcc68_irq_mask_t RF_IRQ = 0;
-   llcc68_get_and_clear_irq_status(0, &RF_IRQ);  //there are seperate  get and clear functions
-   llcc68_check_cmd_status();
-*/
-
-  //HAL_GPIO_WritePin(RFSW_V1_GPIO_Port, RFSW_V1_Pin, 0);
-  //HAL_GPIO_WritePin(RFSW_V2_GPIO_Port, RFSW_V2_Pin, 1);
-
-  //RF_TX_Init_and_Send();
- /* RF_TX_Init();
-
-  uint8_t TX_buf[] = //bytes to send to ground board
-		   {
-				   0x55,
-				   0x55, //all these are place holders for testing
-				   0x55,
-				   0x55
-		   };
-
-  RF_TX(TX_buf);*/
-
-
-
   __NOP();
-
-
-  /*llcc68_rx_buffer_status_t RF_buf_status[] = {0};
-  llcc68_get_rx_buffer_status(0, RF_buf_status);
-  llcc68_check_cmd_status();
-
-	   //uint8_t rx_buf_length = RF_buf_status->pld_len_in_bytes ;
-	   //uint8_t rx_buf_start = RF_buf_status[1];
-	   uint8_t Rx_buf[4] ;
-	   llcc68_read_buffer(0, 0, Rx_buf, 4);
-
-	__NOP();
-
-
-RF_RX_Init_and_Receive();*/
 
   RF_RX_Init();
 
@@ -255,7 +115,7 @@ RF_RX_Init_and_Receive();*/
 
   RF_RX_receive(RX_buf);
 
-
+  __NOP();
 
 
   /* USER CODE END 2 */
