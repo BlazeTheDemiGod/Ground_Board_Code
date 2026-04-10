@@ -118,7 +118,7 @@ uint8_t TX_buf[] = //bytes to send to ground board
 				   0x55
 		   };
 
-  RF_TX(TX_buf);
+  RF_TX_send(TX_buf);
 
   __NOP();
 
