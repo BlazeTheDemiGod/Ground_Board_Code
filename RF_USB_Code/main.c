@@ -103,10 +103,10 @@ int main(void)
   //RF_RX_Init_and_Receive();
     RF_RX_Init();
 
-    uint8_t RX_buf[32] = {0};
+    //uint8_t RX_buf[32] = {0};
 
 
-    //uint8_t RX_buf[28] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27}; //{0}; for testing
+    uint8_t RX_buf[28] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27}; //{0}; for testing
     //uint8_t TxBuffer[] = "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27\r\n";
     //uint8_t TxBufferLen = sizeof(TxBuffer);
 
@@ -125,7 +125,7 @@ int main(void)
   while (1)
   {
 
-	  /* //TEST Code---------------------------------------------------------Test Code---------------------------
+	   //TEST Code---------------------------------------------------------Test Code---------------------------
 	  if(RX_buf[27] == 250)
 	  {
 		  for(uint8_t i = 0 ; i < 28 ; i++)
@@ -140,9 +140,9 @@ int main(void)
 
 		  RX_buf[i] = RX_buf[i] + 1;
 	  }
-	  */
 
-	  RF_RX_receive(RX_buf); //D1 with be on while waiting for RX confirmed  D2 will flash if Error occurs
+
+	  //RF_RX_receive(RX_buf); //D1 with be on while waiting for RX confirmed  D2 will flash if Error occurs
 	  //Does go into an infinite while loop, waits for Rx interupt bit
 
 	  char tx_buf[128];
