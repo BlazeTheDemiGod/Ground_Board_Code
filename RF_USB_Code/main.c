@@ -118,8 +118,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
     uint32_t t0 = 500;
     uint32_t tf = 0;
+
   while (1)
   {
 
@@ -141,6 +143,7 @@ int main(void)
 	  */
 
 	  RF_RX_receive(RX_buf); //D1 with be on while waiting for RX confirmed  D2 will flash if Error occurs
+	  //Does go into an infinite while loop, waits for Rx interupt bit
 
 	  char tx_buf[128];
 
